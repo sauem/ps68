@@ -9,13 +9,13 @@ $menus = getMenu('head');
         <?php if (!empty($menus)) {
             foreach ($menus as $menu) {
                 $items = $menu->items;
-
+                //var_dump($menu);
                 if ($items && !empty($items)) {
                     ?>
                     <li class="level0 nav-4 no-group drop-submenu last parent">
                         <a class=" menu-title-lv0" href="<?= $menu->url ?>">
                             <span class="title">
-                                <?= $menu->post_title !== "" ? $menu->post_title : $menu->title ?>
+                                <?= !empty($menu->title) ? $menu->title : $menu->post_title ?>
                             </span>
                         </a>
                         <div class="wrap_submenu">
@@ -75,7 +75,7 @@ $menus = getMenu('head');
                     ?>
                     <li class="level0 custom-item">
                         <a class="menu-title-lv0 pd-menu116" href="<?= $menu->url ?>" target="_self">
-                            <span class="title"><?= $menu->post_title ?></span>
+                            <span class="title"> <?= !empty($menu->title) ? $menu->title : $menu->post_title ?></span>
                         </a>
                     </li>
                     <?php
