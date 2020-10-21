@@ -15,7 +15,7 @@ $menus = getMenu('head');
                     <li class="level0 nav-4 no-group drop-submenu last parent">
                         <a class=" menu-title-lv0" href="<?= $menu->url ?>">
                             <span class="title">
-                                <?= $menu->post_title ? $menu->post_title : $menu->title ?>
+                                <?= $menu->post_title !== "" ? $menu->post_title : $menu->title ?>
                             </span>
                         </a>
                         <div class="wrap_submenu">
